@@ -11,6 +11,7 @@
         <h2>View All</h2>
         <ul>
             <li th:each="field : ${fields}">
+                <!-- below is an example of how to do query parameters in thymrleaf! -->
                 <a th:href="@{/list/values(column=${field})}" th:text="${field.name}"></a>
             </li>
         </ul>

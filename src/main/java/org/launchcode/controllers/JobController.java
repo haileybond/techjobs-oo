@@ -1,5 +1,6 @@
 package org.launchcode.controllers;
 
+import org.launchcode.models.Job;
 import org.launchcode.models.forms.JobForm;
 import org.launchcode.models.data.JobData;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import javax.validation.Valid;
 /**
  * Created by LaunchCode
  */
+
 @Controller
 @RequestMapping(value = "job")
 public class JobController {
@@ -24,6 +26,11 @@ public class JobController {
     public String index(Model model, int id) {
 
         // TODO #1 - get the Job with the given ID and pass it into the view
+        // get job data
+        Job someJob = jobData.findById(id);
+
+        //pass job data (no title)
+        model.addAttribute("job", someJob);
 
         return "job-detail";
     }

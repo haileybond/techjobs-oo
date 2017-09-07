@@ -29,6 +29,8 @@ public class ListController {
     }
 
     @RequestMapping(value = "values")
+    /*this request param pulls from the query parameters passed from thymeleaf in the template (list.html)
+     */
     public String listColumnValues(Model model, @RequestParam JobFieldType column) {
 
         if (column.equals(JobFieldType.ALL)) {
