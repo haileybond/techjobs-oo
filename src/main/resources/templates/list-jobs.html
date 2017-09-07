@@ -23,10 +23,11 @@
                 <table  th:fragment="single-job" class="job-listing">
                     <tr>
                         <th>Name</th>
-                        <td th:text="${job.name}"></td>
+                        <td><a th:href="@{/job(id=${job.id})}" th:text="${job.name}"></a></td>
                     </tr>
                     <tr>
                         <th>Employer</th>
+                       <!-- http://localhost:8080/list/jobs?column=EMPLOYER&name=Lockerdome-->
                         <td th:text="${job.employer}"></td>
                     </tr>
                     <tr>
